@@ -5,6 +5,7 @@ const { PORT = 3000 } = process.env
 
 const handler = async (req, res) => {
   await timers.setTimeout(10_000)
+  res.setHeader('cache-control', 'public, max-age=31536000, immutable')
   res.end('ok')
 }
 
